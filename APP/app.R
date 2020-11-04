@@ -4,7 +4,8 @@ library(dplyr)
 library(readr)
 library(tidyverse)
 #To read in the csv:
-cereal <- read_delim(file = "/Users/Warren.Sink/Desktop/R projects/team-project-s01-purple/APP/cereal.csv", delim = ";")
+working_dir = getwd()
+cereal <- read_delim(file = paste(working_dir, "cereal.csv", sep = "/"), delim = ";")
 cereal <- cereal[-c(1),]
 cereal$calories <- as.numeric(cereal$calories)
 cereal$protein <- as.numeric(cereal$protein)
